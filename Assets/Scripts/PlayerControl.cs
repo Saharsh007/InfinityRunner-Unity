@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     private float scoreToNext = 10.0f;
     public Deathmenu d;
     private bool isDead;
-    public float EthanSpeed = 1f;
+    public float EthanSpeed = 2f;
 
     private Vector3 playerPos = new Vector3(-147.55f, 171.3f, 18.605f);
 
@@ -45,7 +45,7 @@ public class PlayerControl : MonoBehaviour
 
         float xPos = transform.position.x;
 
-        /*if (KinectManager.instance.IsAvailable)
+        if (KinectManager.instance.IsAvailable)
         {
             xPos = KinectManager.instance.PaddlePosition;
         }
@@ -56,8 +56,8 @@ public class PlayerControl : MonoBehaviour
 
         playerPos = new Vector3(xPos-147.5f, 171.3f, 18.605f);
         
-        transform.position = playerPos;*/
-        if (Input.anyKey)
+        transform.position = playerPos;
+        /*if (Input.anyKey)
         {
             if (Input.GetKey("left") && transform.position.x > -168.3f)
                 direction = Vector3.left;
@@ -69,7 +69,7 @@ public class PlayerControl : MonoBehaviour
         else
         {
             direction = Vector3.zero;
-        }
+        }*/
         float amountTomove = speed * Time.deltaTime;
         float lramountTomove = lrspeed * Time.deltaTime;
         transform.Translate(direction * lramountTomove * 2);
